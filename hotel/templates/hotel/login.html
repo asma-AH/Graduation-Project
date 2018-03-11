@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hotel/css/style.css' %}">
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+  <div class="signUp-box">
+  	
+      <img src="{% static 'hotel/img/person.png'%}" class="person">
+      <h1> Hello to Voyage </h1>
+      <form method="post" action="{% url 'hotel:signin' %}">
+      	{% csrf_token %}
+
+    
+   <!-- <td> {{ form.username.label_tag }} </td>
+    <td> {{ form.username }} </td>
+</tr>
+<tr>
+    <td> {{ form.password.label_tag }}</td>
+    <td> {{ form.password }}</td>-->
+
+      	<p> User name </p>
+      	 {{ form.username }} 
+      	<p> Password</p>
+      	 {{ form.password }}
+      	<input type="submit" name="submit" value="Sign In">
+      	<input type="hidden" name="next" value="{{ next }}" />
+
+      
+      	
+
+      		
+      	<p class="social"> or Sign In with </p>
+      	<ul>
+      		<li><a href="#" class="fa fa-facebook"></a></li>
+      		<li><a href="#" class="fa fa-twitter"></a></li>
+      		<li><a href="#" class="fa fa-google"></a></li>
+      	</ul>
+
+      </form>
+  </div>
+
+</body>
+</html>
+
+
+

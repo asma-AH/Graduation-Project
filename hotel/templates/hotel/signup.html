@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hotel/css/style.css' %}">
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="signUp-box">
+      <img src="{% static 'hotel/img/person.png'%}" class="person">
+      <h1>Sign Up Here </h1>
+      <form method="post" action="{% url 'hotel:SignUp' %}">
+      	{% csrf_token %}
+      	<p> Username </p>
+      	<input type="text" name="username" placeholder="Enter Username">
+      	<p> Email Address </p>
+      	<input type="email" name="email" placeholder="Enter Email Address">
+      	<p> Password</p>
+      	<input type="text" name="password" placeholder="Enter Password">
+      	<input type="submit" name="submit" value="Sign Up">
+      	<p class="social"> or Sign Up with</p>
+      	<ul>
+      		<li><a href="{% url 'social:begin' 'facebook' %}" class="fa fa-facebook"></a></li>
+      		<li><a href="#" class="fa fa-twitter"></a></li>
+      		<li><a href="#" class="fa fa-google"></a></li>
+
+      	</ul>
+      	</div>
+      	
+     <a href="{%  url 'hotel:signin' %}" class="login-a" > already have an account ? click here to Login </a>
+     
+      
+      </form>
+  </div>
+
+</body>
+</html>
