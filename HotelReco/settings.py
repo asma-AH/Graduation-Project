@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'HotelReco.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
- DATABASES = { 'default':
+DATABASES = { 'default':
   { 
       'ENGINE': 'django.db.backends.postgresql', 
       'NAME': 'Voyage', 
