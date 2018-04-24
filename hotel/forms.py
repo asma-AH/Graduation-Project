@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django import forms 
-
+from hotel.models import Document
 
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget = forms.PasswordInput)
@@ -18,4 +18,7 @@ class UserLoginForm(forms.ModelForm):
 		model = User
 		fields = ['email' , 'password']
 	
-		
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = Document
+        fields = ('description', 'document', )

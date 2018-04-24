@@ -25,14 +25,14 @@ SECRET_KEY = 'pbs9hz)3$h-9!-##an$&vu^$t+agid^xfcrdfof$ranxwa2^6_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['voyage.com' , 'localhost' , '127.0.0.1']
+ALLOWED_HOSTS = ['voyage.com', 'localhost', '127.0.0.1']
 
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/hotel'
 
-SITE_ID=1
+SITE_ID = 1
 
 # Application definition
 
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
     'social_django',
 ]
 
@@ -76,7 +75,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'social_django.context_processors.backends',  # <--
-                'social_django.context_processors.login_redirect', # <--
+                'social_django.context_processors.login_redirect',  # <--
             ],
         },
     },
@@ -88,17 +87,17 @@ WSGI_APPLICATION = 'HotelReco.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = { 'default':
-  { 
-      'ENGINE': 'django.db.backends.postgresql', 
-      'NAME': 'Voyage', 
-      'USER': 'postgres', 
-      'PASSWORD': '12345678'
-      , 'HOST': 'localhost'
-      , 'PORT': '5432', 
-      } 
-      
-      }
+DATABASES = {'default':
+             {
+                 'ENGINE': 'django.db.backends.postgresql',
+                 'NAME': 'postgres',
+                 'USER': 'postgres',
+                 'PASSWORD': '12345678', 
+                 'HOST': 'localhost',
+                  'PORT': '5432',
+             }
+
+             }
 
 
 # Password validation
@@ -140,7 +139,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = (
-   
+
     'social_core.backends.facebook.FacebookOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
@@ -149,3 +148,6 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_FACEBOOK_KEY = '2067169019967058'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f8a0c7c3793f7f819bfd3d79d5464fd4'  # App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+#Media Upload 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
